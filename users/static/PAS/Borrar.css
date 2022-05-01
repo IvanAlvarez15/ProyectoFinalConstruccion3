@@ -1,0 +1,25 @@
+div#texto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px 40px;
+    margin: auto;
+    margin-top: 200px;
+
+}
+div#texto h1{
+    color: rgb(0, 0, 0);
+}
+div#texto button{
+    background-color:coral;
+    font-weight: 200;
+    font-size: large;
+    border-style: solid;
+    width: 80px;
+    height: 40px;
+    margin-bottom: 310px;
+}
+body{
+    background-color:white;
+}

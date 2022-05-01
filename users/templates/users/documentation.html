@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'PAS/documentation.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'PAS/src/img/icons/Favicon.png' %}">
+  
+    
+</head>
+
+<body>
+  <h1 id="door-of-drums-api">Door-of-drums API</h1>
+  <h2 id="introduction">Introduction</h2>
+  <p>Welcome to the Door-of-drums API. You can use our API to access Door-of-drums API endpoints, which can get
+    information on the songs that are used in the game, the user info and the records of the users.</p>
+  <h2>Methods that are presented in this API</h2>
+  <table>
+    <tr>
+      <th>GET</th>
+      <th>POST</th>
+    </tr>
+    <tr>
+      <td>
+        GET is used to retrieve resources
+      </td>
+      <td>
+        POST is used to create resources
+      </td>
+    </tr>
+    
+  </table>
+  <p>The methods used for the creation of web pages and for their correct operation are <b>GET</b> and <b>POST</b>. Throughout this document, each of the endpoints that are on the different pages will be explained, explaining the data that is required for them to work correctly and their result in json format.</p>
+
+  <h1>Endpoints used in the web application</h1>
+  <h1>GET Methods in endpoints</h1>
+  <h2 id="user">User</h2>
+  <h3 id="get-user-info">Get user info</h3>
+  <p>
+    This endpoint shows all the information of the users registered in the Django databases. The purpose of this information is to show the most relevant information of the different users of which there is a record.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>GET http://doors-of-drums.games:8080/api/users.json</code>
+    <br>
+    For this endpoint, an HTTP GET Request is used, which helps to obtain the information that you want to display from the users within the databases. Also, this endpoint does not receive any parameters in the URL
+  </p>
+  <h4 id="result-of-this-query">Result of this endpoint</h4>
+  <pre><code class="lang-json">{
+      <span class="hljs-attr">"Users"</span>: [
+        {
+          <span class="hljs-attr">"username"</span>: <span class="hljs-string">"neto"</span>,
+          <span class="hljs-attr">"country"</span>: <span class="hljs-string">"Spain"</span>,
+        },
+        {
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"sofi"</span>,
+        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"China"</span>,
+        },
+        {
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"ivan"</span>,
+        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"Spain"</span>,
+        }
+      ]
+    }
+    </code></pre>
+
+  <h2 id="records">Records</h2>
+  <h3 id="get-all-records">Get all records</h3>
+  <p>
+    The purpose of the eset endpoint is to obtain the game information of all the users of the video game. This is done by a GET method.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>GET http://doors-of-drums.games:8080/api/dashboard.json/</code>
+  <br>
+  For this endpoint, an HTTP GET Request is used, which helps to obtain the information that you want to display from the users within the databases. Also, this endpoint does not receive any parameters in the URL
+  </p>
+  <h4 id="result-of-this-query">Result of this endpoint</h4>
+  <pre><code class="lang-json">{
+      <span class="hljs-attr">"Users"</span>: {
+        <span class="hljs-attr">"Nombre_usuario"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+        <span class="hljs-attr">"Puntos_por_partida"</span>: <span class="hljs-string">"500"</span>,
+        <span class="hljs-attr">"Fecha_del_juego"</span>: <span class="hljs-string">"2000-06-01"</span>,
+        <span class="hljs-attr">"Tiempo_jugado"</span>: <span class="hljs-string">40</span>,      
+      },
+        {
+        <span class="hljs-attr">"Nombre_usuario"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+        <span class="hljs-attr">"Puntos_por_partida"</span>: <span class="hljs-string">"25"</span>,
+        <span class="hljs-attr">"Fecha_del_juego"</span>: <span class="hljs-string">"2000-06-01"</span>,
+        <span class="hljs-attr">"Tiempo_jugado"</span>: <span class="hljs-string">10</span>,
+        },
+        {
+        <span class="hljs-attr">"Nombre_usuario"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+        <span class="hljs-attr">"Puntos_por_partida"</span>: <span class="hljs-string">"1258"</span>,
+        <span class="hljs-attr">"Fecha_del_juego"</span>: <span class="hljs-string">"2000-06-01"</span>,
+        <span class="hljs-attr">"Tiempo_jugado"</span>: <span class="hljs-string">60</span>,
+        },
+        {
+        <span class="hljs-attr">"Nombre_usuario"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+        <span class="hljs-attr">"Puntos_por_partida"</span>: <span class="hljs-string">"630"</span>,
+        <span class="hljs-attr">"Fecha_del_juego"</span>: <span class="hljs-string">"2000-06-01"</span>,
+        <span class="hljs-attr">"Tiempo_jugado"</span>: <span class="hljs-string">80</span>,
+        },
+    }
+    </code></pre>
+
+  <h2 id="records">Unity user info</h2>
+  <h3 id="get-all-records">Get the data from the server to the game.</h3>
+  <p>
+    The purpose of this endpoint is to show the player's information on the web in order to verify that they can enter the video game designed for different users to learn about the world of percussion. So the GET method is used to obtain this information from the database.
+  </p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/api/private/</code>
+  <br>
+  For this endpoint, an HTTP GET Request is used in order to obtain the information from the Django database and know for sure if the user is active and registered in it. This with the aim of giving you access to the video game. Notice that if the user is not register in the web page, it is imposible to access to the videogame.
+  </p>
+  <h4 id="result-of-this-query">Result of this endpoint</h4>
+  <pre><code class="lang-json">{
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+        <span class="hljs-attr">"status"</span>: <span class="hljs-string">"1"</span>,    
+      }
+  </code></pre>
+
+  <h1>POST Methods in endpoints</h1>
+  <h2 id="records">Delete the user</h2>
+  <h3 id="get-all-records">Delete all the data of an specific user.</h3>
+  <p>
+    This endpoint deals with the POST method, which helps to delete the data of a specific user, this is done by passing the Delete view the user id as a parameter in the URL, which is going to perform is that this user is going to be selected from the database and deleted from it.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/Borrar/id</code></p>
+  <p>Where <strong>id</strong> is the id of the user</p>
+  <h4 id="data-params">Data Params</h4>
+  <p>In order to make use of this endpoint, it is necessary to pass the id of the desired user to the URL as if it were a parameter, in addition to being logged into the web page as a user, what this is going to do is that the id that is going to be pass, it will be the id of the user who is registered at that time, preventing the profile of another user from being accidentally or intentionally deleted</p>
+  <h4 id="result-of-this-query">Result of this endpoint</h4>
+  <p>The result of using this endpoint is the redirection to the page where the user will be able to delete their profile information by pressing a button.</p>
+
+  <h2 id="records">Unity points info</h2>
+  <h3 id="get-all-records">Get the data from the server to the game.</h3>
+  <p>
+    The objective of this endpoint is the communication between the UNITY platform and the web page, this is done through the POST method where the data sent by the video game to the databases are recorded for later interpretation in a Dashboard
+  </p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/Puntajes/</code></p>
+  <h4 id="data-params">Data Params</h4>
+  <p>
+    In order to use this endpoint, you need to have played the video game, since in this way, the endpoint will receive data such as the username, the points per game, the time played, etc. So that later they can be saved in the database.</p>
+
+  <h4 id="result-of-this-endpoint">Result of this endpoint</h4>
+  <pre><code class="lang-json">{
+          <span class="hljs-attr">"Nombre_usuario"</span>: <span class="hljs-string">"LoboSalvaje"</span>,
+          <span class="hljs-attr">"Puntos_por_partida"</span>: <span class="hljs-string">"500"</span>,
+          <span class="hljs-attr">"Fecha_del_juego"</span>: <span class="hljs-string">"2000-06-01"</span>,
+          <span class="hljs-attr">"Tiempo_jugado"</span>: <span class="hljs-string">40</span>,      
+          <span class="hljs-attr">"ID_Canciones"</span>: <span class="hljs-string">1</span>,      
+          <span class="hljs-attr">"ID_Usuario"</span>: <span class="hljs-string">1</span>,      
+      }
+  </code></pre>
+  
+  <h2 id="records">Username and hashed password for unity</h2>
+  <p id="get-all-records">This endpoint aims to validate if the user exists in the database through the POST method. This receives the username and password duly hashed to avoid security problems. It should be clarified that you must already have a registered account on the website so that in this way the data received can be compared with something in the database.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/LoginUnity/</code>
+  </p>
+  <h4 id="data-params">Data Params</h4>
+  <p>
+    In order to use this endpoint, the user had to have previously registered on the website and have accessed the game, since the username and hashed password are received.
+  </p>
+  <h4 id="result-of-this-query">Result of this endpoint</h4>
+  <p>The result of this endpoint is to let the user pass to the other levels of the game or, in that case, let him start using it.</p>
+
+  <h2 id="records">Delete user info from unity</h2>
+  <p id="get-all-records">This endpoint aims to erase all game data for a specific player. This is done through the POST method, where the username is received from the videogame programmed in UNITY, this performs a filtering and deletion procedure on each of the fields of the game history database that the user have.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/BorrarUnity/</code></p>
+  <h4 id="data-params">Data Params</h4>
+  <p>In order to use this endpoint, the user had to have previously registered on the website and have accessed the game, since the username is received.</p>
+
+  <h4 id="result-of-this-query">Result of this endpoint</h4>
+  <p>This will delete all the user info in the historial database.</p>
+  
+  <h2 id="records">Higher level of the player</h2>
+  <p id="get-all-records">
+    This endpoint aims to return the highest level previously registered by a player in the database, this is done by the POST method, since the username is received and this helps to filter the data of a specific user.</p>
+  <h4 id="http-request">HTTP Request</h4>
+  <p><code>POST http://doors-of-drums.games:8080/NivelAlto/</code></p>
+  <h4 id="data-params">Data Params</h4>
+  <p>In order to use this endpoint, the user had to have previously registered on the website and have accessed the game, since the username is received.</p>
+  <h4 id="result-of-this-query">Result of this endpoint</h4>
+  <pre><code class="lang-json">[<span class="hljs-attr">"2.0"</span>]
+    </code></pre>
+
+</body>
+
+</html>
