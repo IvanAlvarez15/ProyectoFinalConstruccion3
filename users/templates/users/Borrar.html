@@ -69,18 +69,21 @@
         </nav>
     </header>
 
-    <div id="texto">
-      <h1>You are about to delete your Account, are you sure?</h1>
-        <form action="" method="post">
-            {% csrf_token %}
-            <button type="submit">Delete</button>
-        </form> 
+        <div id="texto">
+        <h1>You are about to delete your Account, are you sure?</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+                <a href="{% url 'Estadisticas_personales'%}">
+                    <button>Go back</button>
+                </a>
+            </form> 
+            
+        </div>
+
         
-        <a href="{% url 'Estadisticas_personales'%}">
-            <button type="submit">Go back</button>
-        </a>
-        
-    </div>
+
+    
     
     <div class="container footer-div">
         <footer class="py-3 my-4">
