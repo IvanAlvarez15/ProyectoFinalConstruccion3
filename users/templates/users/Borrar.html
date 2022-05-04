@@ -71,12 +71,16 @@
 
         <div id="texto">
         <h1>You are about to delete your Account, are you sure?</h1>
-            <form action="" method="post">
-                {% csrf_token %}
-                <button type="submit">Delete</button>
+        
                 <a href="{% url 'Estadisticas_personales'%}">
                     <button>Go back</button>
                 </a>
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+
+                
             </form> 
             
         </div>
