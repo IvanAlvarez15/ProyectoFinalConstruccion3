@@ -23,8 +23,8 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'index'%}">
-                    <img src="{% static 'PAS/src/img/pas-photos/paswhitelogotext.png' %} " alt="percussive arts society" width="60"
-                        id="logo-pas" class="">
+                    <img src="{% static 'PAS/src/img/pas-photos/paswhitelogotext.png' %} " alt="percussive arts society"
+                        width="60" id="logo-pas" class="">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,19 +48,23 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link border-naranja dropdown-toggle" style="display: inline;" href="#"
-                                id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 User options
                             </a>
                             <span style="display: inline;">
-                                <img src="{% static 'PAS/src/img/icons/user_icon.svg' %} " alt="icon of a person" height="30px"
-                                    class="rounded-circle" id="user-icon">
+                                <img src="{% static 'PAS/src/img/icons/user_icon.svg' %} " alt="icon of a person"
+                                    height="30px" class="rounded-circle" id="user-icon">
                             </span>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="{% url 'Registrarse'%}">Log in</a></li>
+
                                 <li><a class="dropdown-item" href="{% url 'Ingresar'%}">Sign in</a></li>
-                                <li><a class="dropdown-item" href="{% url 'Estadisticas_personales'%}">Personal statistics</a></li>
-                                
-                                <li><a class="dropdown-item" href="{% url 'index'%}">Sign out</a></li>
+
+                                <li><a class="dropdown-item" href="{% url 'Estadisticas_personales'%}">Personal
+                                        statistics</a></li>
+
+                                <li><a class="dropdown-item" href="{% url 'logout_user'%}">Sign out</a></li>
                             </ul>
                         </li>
                     </ul>
